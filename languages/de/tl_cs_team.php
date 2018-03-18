@@ -26,16 +26,27 @@ $GLOBALS['TL_LANG']['tl_cs_team']['delete'][0] = 'Team löschen';
 $GLOBALS['TL_LANG']['tl_cs_team']['delete'][1] = 'Team ID %s löschen';
 
 /**
+ * legends
+ */
+$GLOBALS['TL_LANG']['tl_cs_team']['team_legend'] = 'Name';
+
+/**
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_cs_team']['name'][0] = 'Name';
 $GLOBALS['TL_LANG']['tl_cs_team']['name'][1] = 'Hier müssen Sie den Teamnamen eingeben.';
 
 $GLOBALS['TL_LANG']['tl_cs_team']['homepage'][0] = 'Homepage';
-$GLOBALS['TL_LANG']['tl_cs_team']['homepage'][1] = 'Hier müssen Sie die URL zur Website eingeben.';
+$GLOBALS['TL_LANG']['tl_cs_team']['homepage'][1] = 'Hier können Sie die URL zur Website eingeben.';
 
 $GLOBALS['TL_LANG']['tl_cs_team']['league'][0] = 'Liga';
 $GLOBALS['TL_LANG']['tl_cs_team']['league'][1] = 'Hier können Sie die Liga auswählen, in der das Team spielt.';
+
+$GLOBALS['TL_LANG']['tl_cs_team']['location'][0] = 'Veranstaltungsort (Google Maps)';
+$GLOBALS['TL_LANG']['tl_cs_team']['location'][1] = 'Veranstaltungsort für Google Maps eingeben (inkl. Stadt).';
+
+$GLOBALS['TL_LANG']['tl_cs_team']['location_short'][0] = 'Veranstaltungsort (Frontend)';
+$GLOBALS['TL_LANG']['tl_cs_team']['location_short'][1] = 'Veranstaltungsort für die Anzeige im Frontend.';
 
 $GLOBALS['TL_LANG']['tl_cs_team']['city'][0] = 'Stadt';
 $GLOBALS['TL_LANG']['tl_cs_team']['city'][1] = 'Hier können Sie die Stadt des Teams angeben.';

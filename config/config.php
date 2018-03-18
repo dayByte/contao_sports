@@ -1,16 +1,6 @@
 <?php
 
 /**
- * Front end modules
- */
-$GLOBALS['FE_MOD']['contao_sports']['staffs_list'] = 'ContaoSports\ModuleStaffsList';
-$GLOBALS['FE_MOD']['contao_sports']['athletes_list'] = 'ContaoSports\ModuleAthletesList';
-$GLOBALS['FE_MOD']['contao_sports']['events_list'] = 'ContaoSports\ModuleEvents';
-$GLOBALS['FE_MOD']['contao_sports']['gfl_table'] = 'ContaoSports\ModuleGflTable';
-$GLOBALS['FE_MOD']['contao_sports']['gfl_table_jugend'] = 'ContaoSports\ModuleGflTableJugend';
-$GLOBALS['FE_MOD']['contao_sports']['gfl_shorttable'] = 'ContaoSports\ModuleGflShortTable';
-
-/**
  * Content elements
  */
 $GLOBALS['TL_CTE']['contao_sports']['cs_athletes_list'] = 'ContaoSports\ContentAthletesList';
@@ -38,7 +28,7 @@ $GLOBALS['BE_MOD']['contao_sports'] = array
 	),
 	'cs_calendar' => array
 	(
-		'tables'     => array('tl_cs_calendar', 'tl_cs_calendar_events'),
+		'tables'     => array('tl_cs_calendar', 'tl_cs_calendar_events', 'tl_cs_calendar_groups'),
 		'icon'       => 'system/modules/contao_sports/assets/icons/calendar.png',
 	),
 );
