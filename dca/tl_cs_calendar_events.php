@@ -197,7 +197,6 @@ $GLOBALS['TL_DCA']['tl_cs_calendar_events'] = array
         'groups' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_cs_calendar_events']['groups'],
-            'exclude'                 => true,
             'filter'                  => true,
             'inputType'               => 'checkbox',
             'options_callback'        => array('tl_cs_calendar_events', 'getGroups'),
@@ -346,7 +345,7 @@ class tl_cs_calendar_events extends Backend
 
 
     public function listEvents($arrRow)
-    {
+    {        
         $objTeamA = CsTeamModel::findByPk($arrRow['team_a']);
         $objTeamB = CsTeamModel::findByPk($arrRow['team_b']);
 
@@ -379,6 +378,14 @@ class tl_cs_calendar_events extends Backend
         {
             $strResult = '<div  style="float: left;margin-right:220px;><span style="display:inline-block;width: 70px;"><b>Ergebnis: </b></span>'.$arrRow['result_team_a'].':'.$arrRow['result_team_b'].'<br/></div>';
         }
+        
+        $arrGroups=unserialize($arrRow['groups']);
+        foreach($arrGroups as $k => $v) 
+        {
+          $strGroups.=$v."<br />";
+          //$objGroup = $this->Database->prepare('SELECT title FROM tl_cs_calendar_groups WHERE id = ?')->execute($v);			
+          //echo $objGroup['title'];
+        }
 
         return '
 <div style="margin-bottom:5px;"><b style="text-transform:uppercase;">'.$objTeamA->name.' VS '.$objTeamB->name.'</b></div>
@@ -387,10 +394,13 @@ class tl_cs_calendar_events extends Backend
 	<img src="system/modules/contao_sports/assets/images/calendar_vs.png" width="30" height="40">
 	<img src="'.$strTeamBImageURL.'" width="40" height="40" title="'.$objTeamB->name.'">
 </div>
-<div style="float:left;width:300px;margin-right:20px;">
+<div style="float:left;width:160px;margin-right:20px;">
 	<span style="display:inline-block;width: 70px;"><b>Datum: </b></span>'.$strDate.'<br/>
 	<span style="display:inline-block;width: 70px;"><b>Zeit: </b></span>'.$strTime.' Uhr<br/>
 	<span style="display:inline-block;width: 70px;"><b>Ort: </b></span>'.$arrRow['location'].'<br/>
+</div>
+<div style="float:left;width:160px;margin-right:20px;">
+	<span style="display:inline-block;width: 70px;"><b>Gruppen: </b></span><br/>'.$strGroups.'
 </div>' . $strResult;
     }
 
